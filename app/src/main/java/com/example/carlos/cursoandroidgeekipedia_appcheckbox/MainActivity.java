@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -12,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText et_valor1 ,et_valor2 ;
     private TextView tv_resultado;
+    private CheckBox cb_sumar, cb_restar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,8 +23,8 @@ public class MainActivity extends AppCompatActivity {
         et_valor1 = findViewById(R.id.et_valor1);
         et_valor2 = findViewById(R.id.et_valor2);
         tv_resultado = findViewById(R.id.tv_resultado);
-        rb_sumar = findViewById(R.id.rb_sumar);
-        rb_restar = findViewById(R.id.rb_restar);
+        cb_sumar = findViewById(R.id.cb_sumar);
+        cb_restar = findViewById(R.id.cb_restar);
 
     }
 
@@ -38,13 +40,13 @@ public class MainActivity extends AppCompatActivity {
 
         //hacer las operaciones.
 
-        if (rb_sumar.isChecked()) {
+        if (cb_sumar.isChecked()) {
             res = valor1_int + valor2_int;
             String resultado = String.valueOf(res);
             tv_resultado.setText(resultado);
         }
         else
-        if (rb_restar.isChecked()) {
+        if (cb_restar.isChecked()) {
             res = valor1_int - valor2_int;
             String resultado = String.valueOf(res);
             tv_resultado.setText(resultado);
